@@ -1,6 +1,3 @@
-const { GraphQLScalarType } = require('graphql')
-
-const typeDefs = `
     scalar DateTime
     enum PhotoCategory {
     SELFIE
@@ -30,6 +27,8 @@ const typeDefs = `
     type Query {
         totalPhotos: Int!
         allPhotos: [Photo!]!
+        totalUsers: Int!
+        allUsers: [User!]!
     }
     type User {
     githubLogin: ID!
@@ -41,5 +40,5 @@ const typeDefs = `
 
     type Mutation {
     postPhoto(input: PostPhotoInput!): Photo! }
-`
+
 
