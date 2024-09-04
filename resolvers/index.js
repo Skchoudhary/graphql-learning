@@ -6,13 +6,13 @@ const fetch = require('node-fetch')
 const resolvers = {
         Query: {
                 totalPhotos: (parent, args, { db }) => db.collection('photos')
-                        .estimatedDocumentCount(),
+                        .countDocuments(),
                 allPhotos: (parent, args, { db }) => db.collection('photos')
                         .find()
                         .toArray(),
 
                 totalUsers: (parent, args, { db }) => db.collection('users')
-                        .estiamtedDoucmentCount(),
+                        .countDocuments(),
                 allUsers: (parent, args, { db }) =>
                         db.collection('users')
                                 .find()
